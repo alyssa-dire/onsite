@@ -35,15 +35,16 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
     };
 
     return (
-        <Grid container columns={12} spacing={3} sx={{ m: 2, pb: 5}} >
+        <Grid container columns={12} spacing={0} sx={{ ml: 'auto', mr: 'auto', pb: 5, pt: 6, pl: 4, pr: 4}} >
             <Grid item xs={6}>
-                <Box sx={{ width: '500px', justifySelf: 'center' }}>
+                <Box sx={{ width: '100%', justifySelf: 'center' }}>
                 <Typography color="black">Travel Dates</Typography>
                 <LocalizationProvider dateAdapter={AdapterDateFns}>
                     {/* <DateRangePicker 
                     startText="Start Date"
                     endText="End Date"
                     name="daterange"
+                     sx={{ background: 'white', width: '100%'  }}
                     disabled={toggle}
                     value={values.daterange}
                     onChange={handleInputChange}
@@ -64,7 +65,7 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
                         value={values.startdate}
                         onChange={handleInputChange}
                         renderInput={(params) => <TextField {...params} />}
-                        sx={{ background: 'white' }}
+                        sx={{ background: 'white', width: 50 }}
                         />
                         <DesktopDatePicker
                         label="End Date"
@@ -73,7 +74,7 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
                         value={values.enddate}
                         onChange={handleInputChange}
                         renderInput={(params) => <TextField {...params} />}
-                        sx={{ background: 'white' }}
+                        sx={{ background: 'white', width: 50  }}
                         />
                     </Stack>
                 </LocalizationProvider>
@@ -88,8 +89,18 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
                 </Box>
                 </Box>
             </Grid>
-            <Grid item xs={6}>
-                <InputLabel id="location-label">Location</InputLabel>
+            <Grid item xs={6} sx={{ 
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'flex-end', 
+                    maxWidth: '275px',
+                }}>
+                <InputLabel id="location-label" sx={{
+                    width: '100%',
+                    maxWidth: '275px',
+                }}>
+                Location
+                </InputLabel>
                 <Select
                 labelId="location-label"
                 id="location-select"
@@ -98,8 +109,10 @@ const InitialBookingContent = ({ values, handleInputChange }) => {
                 value={values.location}
                 onChange={handleInputChange}
                 sx={{
-                    width: 300,
+                    width: '100%',
+                    maxWidth: '275px',
                     background: 'white',
+
                 }}
                 >
                     {locations.map((location) => {

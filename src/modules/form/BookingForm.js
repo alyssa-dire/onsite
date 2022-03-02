@@ -60,10 +60,10 @@ const BookingForm = (props) => {
             <Box
             component="form"
             onSubmit={handleSubmit}
-            sx={{ justifyContent: 'center', alignItems: 'center' }}
+            sx={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff80', borderRadius: 10, m: 0, width: 1, }}
             >
                 <InitialBookingContent values={values} handleInputChange={handleInputChange} />
-                { display ? <SubsequentBookingContent values={values} handleInputChange={handleInputChange} /> : <Grid item xs={4}  sx={{ mx: 'auto' }}><Button variant="contained" color="secondary" onClick={() => setDisplay(true)} sx={{ width: 200, }}>Let's Plan!</Button></Grid> }
+                { display ? <SubsequentBookingContent values={values} handleInputChange={handleInputChange} /> : <Grid item xs={4}  sx={{ mx: 'auto', textAlign: 'center', }}><Button variant="contained" color="secondary" onClick={() => setDisplay(true)} sx={{ width: 200, mb: 6, }}>Let's Plan!</Button></Grid> }
             </Box>
         </Container>
 
